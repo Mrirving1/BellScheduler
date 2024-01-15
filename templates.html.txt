@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bell Schedule Generator</title>
+</head>
+<body>
+    <h1>Bell Schedule Generator</h1>
+    <form method="POST" action="/generate">
+        <label for="start_time">School day start time (HH:MM):</label>
+        <input type="text" id="start_time" name="start_time"><br>
+
+        <!-- Add input fields for other parameters here -->
+
+        <input type="submit" value="Generate Schedule">
+    </form>
+
+    {% if schedule %}
+    <h2>Schedule:</h2>
+    <ul>
+        {% for period in schedule %}
+        <li>{{ period }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
